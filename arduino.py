@@ -13,7 +13,7 @@ class Arduino:
         """ blink led """
         ser = serial.Serial()
         ser.baudrate = 9600
-        ser.port = 'COM3'
+        ser.port = 'COM8'
         ser.open()
         if status == "H":
             ser.write(b'H')
