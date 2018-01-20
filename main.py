@@ -18,6 +18,5 @@ class Main:
     t_end = time.time() + 5 # 5 seconds
 
     while time.time() < t_end:
-        arduinoInstance.onboardled("H")
+        arduinoInstance.onboardled("1")
 
-    #print("hello world !")
