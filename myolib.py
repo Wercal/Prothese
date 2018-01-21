@@ -23,30 +23,21 @@ try:
     
   while hub.running and myo.connected:
     quat = myo.orientation
-    #print('Orientation:', quat.x, quat.y, quat.z, quat.w)
-  
-    #print (myos[0], myos[0].pose)
+    print('Orientation:', quat.x, quat.y, quat.z, quat.w)
+    print (myos[0], myos[0].pose)
     
     #print (myo.pose) #// This code crash the IDE for unknow reason
 
-    if myo.pose == "wave_in":
-      print("pose wave_in")
-
-      ser = serial.Serial()
-      ser.baudrate = 9600
-      ser.port = 'COM8'
-      ser.open()
+    #if myo.pose == "wave_in":
+    #  print("pose wave_in")
+    
+    #elif myo.pose == "wave_out":
+    #  print("pose wave_out") 
+    #else:
+    #  print("pas de position")
+     
+           
       
-      ser.write(b'H')
-
-      time.sleep(0.5)
-   
-      ser.close()
-      
-
-    if myo.pose == "wave_out":
-      print("pose wave_out")      
-      
-    #time.sleep(1)
+    
 finally:
   hub.shutdown()  # !! crucial
