@@ -23,9 +23,10 @@ try:
     
   while hub.running and myo.connected:
     quat = myo.orientation
-    print('Orientation:', quat.x, quat.y, quat.z, quat.w)
-    print (myos[0], myos[0].pose)
+    #print('Orientation:', quat.x, quat.y, quat.z, quat.w)
+    #print (myos[0], myos[0].pose)
     
+    print (myos[0].pose)
     #print (myo.pose) #// This code crash the IDE for unknow reason
 
     #if myo.pose == "wave_in":
@@ -37,7 +38,7 @@ try:
     #  print("pas de position")
      
            
-      
+    time.sleep(0.1)
     
 finally:
   hub.shutdown()  # !! crucial
