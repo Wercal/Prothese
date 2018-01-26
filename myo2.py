@@ -46,8 +46,9 @@ class MyoC:
                 
             while hub.running and myo.connected:
                 quat = myo.orientation
-                #print('Orientation:', quat.x, quat.y, quat.z, quat.w)
+                print('Orientation:', quat.x, quat.y, quat.z, quat.w)
                 print (myos[0], myos[0].pose)
+                print ('')
                 
                 #print (myos[0].pose)
                 #print (myo.pose) #// This code crash the IDE for unknow reason
@@ -63,9 +64,9 @@ class MyoC:
                   print("pose wave_out") 
                   maVariable="2"
                   break
-                else:
-                  print("pas de position")
-                  maVariable="3"
+                #else:
+                  #print("pas de position")
+                  #maVariable="3"
                 
                 time.sleep(0.01)
 

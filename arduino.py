@@ -12,24 +12,32 @@ class Arduino:
     def onboardled(cls, status):
         """ blink led """
         ser = serial.Serial()
-        time.sleep(2)
+        time.sleep(0.5)
         ser.baudrate = 9600
-        ser.port = 'COM9'
-        ser.open()
+        ser.port = 'COM8'
 
-        if status == "1":
-            for x in range(10):
-                ser.write(b'a')
-                time.sleep(0.2)
-                ser.write(b'c')
-                time.sleep(0.2)
-        if status == "2":
-             for x in range(10):
-                ser.write(b'b')
-                time.sleep(0.2)
-                ser.write(b'c')
-                time.sleep(0.2)
+        try:
+            ser.open()
+            
+            for x in range(0, 200):
+                time.sleep(0.01)
 
-        time.sleep(0.2)
-        ser.close()
+                arduino_status="null"
+                    
+                try:
+                    arduino_status = ser.readline().decode()
+                except UnicodeDecodeError:
+                    print(ser.readline())
+                    
+                if ("free" in arduino_status):
+                    
+                    if status == "1":
+                        ser.write(b'a')
+                    if status == "2":
+                        ser.write(b'b')
+                    break
+
+            time.sleep(0.5)
+        finally:
+            ser.close()
         
