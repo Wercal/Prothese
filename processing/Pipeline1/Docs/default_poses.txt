@@ -1,0 +1,18 @@
+Default poses : 
+
+	- rest
+	- fist
+	- wave
+	- waveOut
+	- fingersSpread
+	- doubleTap
+-	- unknown
+
+
+	Sensor types : 
+		
+		- electromyogram
+		- electroencephalogramme
+		- electrocardiogramme
+
+ 
